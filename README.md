@@ -1,2 +1,5 @@
-# t-sys-prime-php-adapter
-PHP Adapter for T-SYS Prime Card &amp; Payment solution
+# TSYS PRIME PHP-Adapter
+
+Official guide and documentation only show incomplte examples of using the engine in VBA.NET. This adapter completely abstractions the process of handling computations in PHP.
+
+http://tsysprime.com
