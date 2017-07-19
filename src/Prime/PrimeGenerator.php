@@ -37,6 +37,36 @@ final class PrimeGenerator
     }
 
     /**
+     * Render fields
+     * 
+     * @return string
+     */
+    public function renderFields()
+    {
+        $fragment = null;
+
+        foreach ($this->createFields() as $name => $value) {
+            $fragment .= sprintf('<input type="hidden" name="%s" value="%s">', $name, $value) . PHP_EOL;
+        }
+
+        return $fragment;
+    }
+
+    /**
+     * Create fields to be rendered
+     * 
+     * @return array
+     */
+    private function createFields()
+    {
+        return array_merge($this->options, array(
+            // Dynamic fields
+            'Signature' => $this->createSignature(),
+            'OrderID' => $this->createOrderId()
+        ));
+    }
+
+    /**
      * Creates unique order ID
      * 
      * @return string
